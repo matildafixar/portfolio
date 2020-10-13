@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
-   <link rel="stylesheet" href="../css/responsive.css">
+   <link rel="stylesheet" href='/responsive.css'>
    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -32,33 +32,29 @@
     <main>
         
 
-        <div class= "box" id='cool-bg'></div>
+        <div class= "box" id='cool-bg'>
+            <h3>Welcome to my page!</h3>
+        </div>
     
 
     <section>
 
-
-
-
-        <div class='portfolio' id='portfolio'>
-        <div class= "box-1"></div>
-        <div class= "box-2"></div>
-        <div class= "box-3"></div>
-        <div class= "box-4"></div>
-        <div class= "box-5"></div>
-        <div class= "box-6"></div>
-        </div>
-
         <div class='port' id='portfolio'>
-            <div><img src="../images/IMG_8681 2.jpg" alt="" class='grid'></div>
+
+            <div><img src="IMG_8681 2.jpg" alt="" class='gallery'>
             
-            <div><img src="../images/IMG_8681 2.jpg" alt="" class='grid'></div>
-            <div><img src="../images/IMG_8681 2.jpg" alt="" class='grid'></div>
-            <div><img src="../images/IMG_8681 2.jpg" alt="" class='grid'></div>
-            
-            <div><img src="../images/IMG_8681 2.jpg" alt="" class='grid'></div>
-            <div><img src="../images/IMG_8681 2.jpg" alt="" class='grid'></div>
+                <span class="description"><a href="#">gvg</a></span>
+                  
             </div>
+            
+            <div><img src="/IMG_8681 2.jpg" alt="" class='gallery'></div>
+            <div><img src="IMG_8681 2.jpg" alt="" class='gallery'></div>
+            <div><img src="IMG_8681 2.jpg" alt="" class='gallery'></div>
+            
+            <div><img src="/IMG_8681 2.jpg" alt="" class='gallery'></div>
+            <div><img src="/IMG_8681 2.jpg" alt="" class='gallery'></div>
+
+        </div>
 
         
     </section>
@@ -67,7 +63,20 @@
         <div class= "box" id ="about">
 
             <h2 class='about-text'>About me</h2>
-  
+            <button class="accordion">Section 1</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">Section 2</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">Section 3</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
 
 
           
@@ -86,7 +95,20 @@
     
      <script>
 
-       
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
         window.addEventListener('scroll', function() {
         let value = window.scrollY;
         
